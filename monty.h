@@ -65,6 +65,22 @@ void print_top(stack_t **head, unsigned int counter);
 void inc_queue(stack_t **head, int n);
 void pall_opcodes(stack_t **head, unsigned int counter);
 void free_stack(stack_t *head);
+void pint_opcodes(stack_t **head, unsigned int count);
 int handle_ops(char *data, stack_t **stack, unsigned int     counter, FILE *montyFile);
+void pop_opcodes(stack_t **head, unsigned int count);
+void stack_opcodes(stack_t **head, unsigned int count);
+void add_opcodes(stack_t **head, unsigned int count);
+void swap_opcodes(stack_t **head, unsigned int count);
+void nop_opcodes(stack_t **head, unsigned int counter);
+void sub_opcodes(stack_t **head, unsigned int count);
+void div_opcodes(stack_t **head, unsigned int count);
+void mul_opcodes(stack_t **head, unsigned int count);
+void mod_opcodes(stack_t **head, unsigned int count);
+void pchar_opcode(stack_t **head, unsigned int count);
+void pstr_opcodes(stack_t **head, unsigned int count);
+void rotl_opcodes(stack_t **head,  __attribute__((unused    )) unsigned int count);
+void rotr_opcodes(stack_t **head, __attribute__((unused)    ) unsigned int count);
+void stack_opcodes(stack_t **head, unsigned int count);
+
 
 #endif

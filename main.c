@@ -7,7 +7,7 @@ programData_t bus = {NULL, NULL, NULL, 0};
  * @av: monty file location
  * Return: 0 on success
  */
-
+int main(int ac, char **av);
 int main(int ac, char **av)
 {
 	FILE *montyFile;
@@ -16,7 +16,8 @@ int main(int ac, char **av)
 	ssize_t line_ptr = 1;
 	stack_t *stack = NULL;
 	unsigned int counter = 0;
-	char* data;
+	char *data;
+
 
 	/* Checks if argument is 2 */
 	if (ac != 2)
@@ -27,7 +28,7 @@ int main(int ac, char **av)
 
 	/* File is opened in read only mode*/
 	montyFile = fopen(av[1], "r");
-	bus.montyFile = montyFile;
+	/*bus.montyFile = montyFile;*/
 
 		/* Checks if file cannot be opened */
 		if (montyFile == NULL)
@@ -52,5 +53,7 @@ int main(int ac, char **av)
 	free_stack(stack);
 	fclose(montyFile);
 
-	return 0;
-} 
+	return (0);
+}
+
+

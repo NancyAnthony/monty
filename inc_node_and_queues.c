@@ -33,7 +33,7 @@ void inc_node(stack_t **head, int n)
  * print_top - prints the top
  * @head: stack head
  * @counter: line_number
- * Return: no return
+ * Return: nothing
  */
 void print_top(stack_t **head, unsigned int counter)
 {
@@ -75,4 +75,18 @@ void inc_queue(stack_t **head, int n)
 		temp->next = new_node;
 		new_node->prev = temp;
 	}
+}
+
+
+/**
+ * stack_opcodes - prints the top
+ * @head: stack head
+ * @count: line_number
+ * Return: nothing
+ */
+void stack_opcodes(stack_t **head, unsigned int count)
+{
+	UNUSED(head);
+	UNUSED(count);
+	bus.modeFlag = 0;
 }

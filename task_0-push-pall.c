@@ -7,7 +7,7 @@
  * Return: nothing
  */
 
-void handlePushError(programData_t bus, int counter, stack_t** head) 
+void handlePushError(programData_t bus, int counter, stack_t **head)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", counter);
 	fclose(bus.montyFile);

@@ -1,33 +1,25 @@
 #include "monty.h"
 /**
- * execute - executes the opcode
+ * handle_ops - executes the opcode
  * @stack: head linked list - stack
  * @counter: line_counter
  * @montyFile: poiner to monty file
  * @data: line content
  * Return: Nothing
  */
-int handle_ops(char *data, stack_t **stack, unsigned int counter, FILE *montyFile)
+int handle_ops(char *data, stack_t **stack,
+		unsigned int counter, FILE *montyFile)
 {
 	instruction_t ops[] = {
-		{"push", push_opcodes},
-		{"pall", pall_opcodes},
-		/*{"pint", f_pint},*/
-		/*{"pop", f_pop},*/
-		/*{"swap", f_swap},*/
-		/*{"add", f_add},*/
-		/*{"nop", f_nop},*/
-		/*{"sub", f_sub},*/
-		/*{"div", f_div},*/
-		/*{"mul", f_mul},*/
-		/*{"mod", f_mod},*/
-		/*{"pchar", f_pchar},*/
-		/*{"pstr", f_pstr},*/
-		/*{"rotl", f_rotl},*/
-		/*{"rotr", f_rotr},*/
-		/*{"queue", f_queue},*/
-		/*{"stack", f_stack},*/
-		{NULL, NULL}
+		{"push", push_opcodes}, {"pall", pall_opcodes},
+		{"pint", pint_opcodes}, {"pop", pop_opcodes},
+		{"swap", swap_opcodes}, {"add", add_opcodes},
+		{"nop", nop_opcodes}, {"sub", sub_opcodes},
+		{"div", div_opcodes}, {"mul", mul_opcodes},
+		{"mod", mod_opcodes}, {"pchar", pchar_opcode},
+		{"pstr", pstr_opcodes}, {"rotl", rotl_opcodes},
+		{"rotr", rotr_opcodes}, {"queue", print_top},
+		{"stack", stack_opcodes}, {NULL, NULL}
 	};
 	unsigned int ind = 0;
 	char *opcodes;
@@ -51,7 +43,7 @@ int handle_ops(char *data, stack_t **stack, unsigned int counter, FILE *montyFil
 		fclose(montyFile);
 		free(data);
 		free_stack(*stack);
-		exit(EXIT_FAILURE); 
+		exit(EXIT_FAILURE);
 	}
 	return (1);
 }
